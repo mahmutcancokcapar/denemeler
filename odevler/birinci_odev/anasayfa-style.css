@@ -1,77 +1,66 @@
 body {
     background-color: #e3e3e3;
 }
-
 .main-div {
-    background-color: white;
-    padding: 20px;
-    margin: 50px 100px;
-    display: flex;
-    flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    flex-direction: column;
     border-radius: 20px;
+    margin: 50px 100px;
+    padding: 20px;
+    display: flex;
 }
-
 .header-container {
-    font-size: 24px;
     font-weight: bold;
+    font-size: 24px;
 }
-
 .desc-container {
+    margin-bottom: 10px;
+    margin-top: 5px;
     font-size: 12px;
     color: grey;
-    margin-top: 5px;
-    margin-bottom: 10px;
 }
-
 .second-div {
     background-color: #e3e3e3;
-    padding: 20px;
     border-radius: 10px;
+    padding: 20px;
 }
-
 .ogeler {
-    display: flex;
     flex-direction: column;
     align-items: start;
     margin-bottom: 5px;
     margin-top: 5px;
+    display: flex;
 }
-
 .inputs {
     margin-top: 5px;
 }
-
 .message-div {
-    display: flex;
     flex-direction: column;
-    margin-top: 5px;
     margin-bottom: 5px;
+    margin-top: 5px;
+    display: flex;
 
 }
-
 .button-div {
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
 .button {
-    font-size: 20px;
     background-color: lightgreen;
     border-radius: 5px;
-    border: none;
     padding: 10px 20px;
     user-select: none;
+    font-size: 20px;
+    border: none;
 }
-
 .button:hover {
     background-color: green;
     cursor: pointer;
     color: white;
 }
-
 .button:active {
     transform: translateY(2px);
 }
