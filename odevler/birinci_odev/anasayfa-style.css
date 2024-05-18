@@ -32,8 +32,15 @@ body {
     margin-top: 5px;
     display: flex;
 }
+.input {
+    width: 100%;
+}
 .inputs {
     margin-top: 5px;
+    background-color: red;
+}
+.inputs input {
+width: 100%;
 }
 .message-div {
     flex-direction: column;

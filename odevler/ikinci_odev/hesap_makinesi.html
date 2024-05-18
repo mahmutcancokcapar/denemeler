@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hesap Makinesi</title>
+    <link rel="stylesheet" href="./style_hesap.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="input-container">
+        <input type="number" id="number1" placeholder="Birinci Sayı" />
+        <input type="number" id="number2" placeholder="İkinci Sayı" />
+      </div>
+      <div class="button-container">
+        <button onclick="topla()">Topla</button>
+        <button onclick="cikar()">Çıkar</button>
+        <button onclick="carp()">Çarp</button>
+        <button onclick="bol()">Böl</button>
+      </div>
+      <div class="sonuc-container">
+        <span>Sonuç:</span>
+        <span id="sonuc">sonuc</span>
+      </div>
+    </div>
+    <script>
+      function getNumbers() {
+        const number1 = parseFloat(document.getElementById("number1").value);
+        const number2 = parseFloat(document.getElementById("number2").value);
+        return { number1, number2 };
+      }
+
+      function topla() {
+        const { number1, number2 } = getNumbers();
+        const result = number1 + number2;
+        document.getElementById("sonuc").textContent = result;
+      }
+
+      function cikar() {
+        const { number1, number2 } = getNumbers();
+        const result = number1 - number2;
+        document.getElementById("sonuc").textContent = result;
+      }
+
+      function carp() {
+        const { number1, number2 } = getNumbers();
+        const result = number1 * number2;
+        document.getElementById("sonuc").textContent = result;
+      }
+
+      function bol() {
+        const { number1, number2 } = getNumbers();
+        if (number2 !== 0) {
+          const result = number1 / number2;
+          document.getElementById("sonuc").textContent = result;
+        } else {
+          document.getElementById("sonuc").textContent =
+            "Hata: Bölme sıfıra yapılamaz";
+        }
+      }
+    </script>
+  </body>
+</html>
