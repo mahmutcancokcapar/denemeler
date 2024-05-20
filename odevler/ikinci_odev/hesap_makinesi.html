@@ -2,20 +2,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hesap Makinesi</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./style_hesap.css" />
   </head>
   <body>
     <div class="main-container">
       <div class="input-container">
-        <input type="number" id="number1" placeholder="Birinci Sayı" />
-        <input type="number" id="number2" placeholder="İkinci Sayı" />
+        <input type="number" id="number1" />
+        <input type="number" id="number2" />
       </div>
       <div class="button-container">
-        <button onclick="topla()">Topla</button>
-        <button onclick="cikar()">Çıkar</button>
-        <button onclick="carp()">Çarp</button>
-        <button onclick="bol()">Böl</button>
+        <button onclick="hesapla('topla')">Topla</button>
+        <button onclick="hesapla('cikar')">Çıkar</button>
+        <button onclick="hesapla('carp')">Çarp</button>
+        <button onclick="hesapla('bol')">Böl</button>
       </div>
       <div class="sonuc-container">
         <span>Sonuç:</span>
@@ -29,33 +29,32 @@
         return { number1, number2 };
       }
 
-      function topla() {
+      function hesapla(islem) {
         const { number1, number2 } = getNumbers();
-        const result = number1 + number2;
-        document.getElementById("sonuc").textContent = result;
-      }
+        let result;
 
-      function cikar() {
-        const { number1, number2 } = getNumbers();
-        const result = number1 - number2;
-        document.getElementById("sonuc").textContent = result;
-      }
-
-      function carp() {
-        const { number1, number2 } = getNumbers();
-        const result = number1 * number2;
-        document.getElementById("sonuc").textContent = result;
-      }
-
-      function bol() {
-        const { number1, number2 } = getNumbers();
-        if (number2 !== 0) {
-          const result = number1 / number2;
-          document.getElementById("sonuc").textContent = result;
-        } else {
-          document.getElementById("sonuc").textContent =
-            "Hata: Bölme sıfıra yapılamaz";
+        switch (islem) {
+          case "topla":
+            result = number1 + number2;
+            break;
+          case "cikar":
+            result = number1 - number2;
+            break;
+          case "carp":
+            result = number1 * number2;
+            break;
+          case "bol":
+            if (number2 !== 0) {
+              result = number1 / number2;
+            } else {
+              result = "Hata: Bölme sıfıra yapılamaz";
+            }
+            break;
+          default:
+            result = "Hata: Geçersiz işlem";
         }
+
+        document.getElementById("sonuc").textContent = result;
       }
     </script>
   </body>
