@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.header-container {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    display: flex;
+}
+.header-menu {
+    display: flex;
+    gap: 10px;
+}
+.logo {
+    font-weight: bold;
+    font-size: 35px;
+
+}
+.header-menu a {
+    text-decoration: none;
+    font-size: 13px;
+    color: grey;
+}
+.main-container {
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+}
+.left-container,
+.right-container {
+    flex: 1;
+}
+.left-container {
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+}
+.left-container-bottom {
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+}
+.left-container-bottom-right {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+    display: flex;
+    gap: 10px;
+}
+.left-container-bottom-right>p {
+    color: grey;
+}
+.button {
+    background-color: rgb(231, 92, 92);
+    padding: 10px 20px;
+    user-select: none;
+    color: white;
+    border: none;
+}
+.right-container {
+    background-color: rgb(13, 8, 30);
+    flex-direction: column;
+    align-items: start;
+    display: flex;
+    padding: 20px;
+    color: white;
+    gap: 10px;
+}
+.right-container>ul {
+    list-style: none;
+    margin-top: 20px;
+    gap: 20px;
+}
+.right-container-list li {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.right-container-header {
+    color: orangered;
+}
+.article-header {
+    text-decoration: none;
+    color: white;
+}
+.article-content {
+    color: grey;
+}
+.end-container {
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+.end-container-items {
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    height: 100px;
+    width: 50px;
+    gap: 20px;
+}
+.item-contents {
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+}
+.item-contents>h2 {
+    font-size: 18;
+    color: grey;
+}
+.item-contents>h3 {
+    font-size: 15;
+}
+.item-contents>p {
+    font-weight: lighter;
+    font-size: 12;
+    color: grey;
+}
+@media (max-width: 768px) {
+    .header-container {
+        align-items: flex-start;
+        flex-direction: column;
+
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-container-bottom {
+        flex-direction: column;
+    }
+
+    .end-container {
+        flex-direction: column;
+    }
+
+    .end-container-items {
+        flex-direction: column;
+    }
+}
