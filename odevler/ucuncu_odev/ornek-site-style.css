@@ -21,7 +21,6 @@ body {
 .logo {
     font-weight: bold;
     font-size: 35px;
-
 }
 .header-menu a {
     text-decoration: none;
@@ -128,21 +127,16 @@ body {
     .header-container {
         align-items: flex-start;
         flex-direction: column;
-
     }
-
     .main-container {
         flex-direction: column;
     }
-
     .left-container-bottom {
         flex-direction: column;
     }
-
     .end-container {
         flex-direction: column;
     }
-
     .end-container-items {
         flex-direction: column;
     }
