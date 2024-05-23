@@ -105,7 +105,6 @@ body {
     gap: 20px;
 }
 .end-container-items {
-    justify-content: space-between;
     width: calc(33.33% - 20px);
     flex-direction: row;
     display: flex;
