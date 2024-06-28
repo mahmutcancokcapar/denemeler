@@ -1,66 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("modal");
-    const closeModal = document.getElementById("close-button");
+	const modal = document.getElementById("modal");
+	const closeModal = document.getElementById("close-button");
 
-    const foodsContainerObject = document.getElementById("foods");
+	const marketUrunleriContainer = document.getElementById("marketUrunleri");
 
-    const loadFoods = (foods) => {
-        foods.forEach((item) => {
-            const foodCard = document.createElement("div");
-            foodCard.className = "product-card";
+	const loadMarketUrunleri = (marketUrunleri) => {
+		marketUrunleri.forEach((item) => {
+			const urunCard = document.createElement("div");
+			urunCard.className = "product-card";
 
-            const foodImage = document.createElement("img");
-            foodImage.src = item.photoUrl;
-            foodImage.className = "image-container";
+			const urunImage = document.createElement("img");
+			urunImage.src = item.image;
+			urunImage.className = "image-container";
 
-            const foodTitle = document.createElement("span");
-            foodTitle.textContent = item.title;
+			const urunTitle = document.createElement("span");
+			urunTitle.textContent = item.title;
+			urunTitle.className = "product-title";
 
-            const detailsButton = document.createElement("button");
-            detailsButton.className = "details-button";
-            detailsButton.textContent = "Detay gör";
-            detailsButton.onclick = () => showDetails(item);
+			const urunFiyat = document.createElement("span");
+			urunFiyat.textContent = `Fiyat: ${item.price}`;
+			urunFiyat.className = "product-price";
 
-            foodCard.appendChild(foodImage);
-            foodCard.appendChild(foodTitle);
-            foodCard.appendChild(detailsButton);
+			const detailsButton = document.createElement("button");
+			detailsButton.className = "details-button";
+			detailsButton.textContent = "Detay gör";
+			detailsButton.onclick = () => showDetails(item);
 
-            foodsContainerObject.appendChild(foodCard);
-        });
-    };
+			urunCard.appendChild(urunImage);
+			urunCard.appendChild(urunTitle);
+			urunCard.appendChild(urunFiyat);
+			urunCard.appendChild(detailsButton);
 
-    const showDetails = (item) => {
-        const modalTitle = modal.querySelector("h2");
-        const modalImage = modal.querySelector("img");
-        const modalDescription = modal.querySelector("p");
+			marketUrunleriContainer.appendChild(urunCard);
+		});
+	};
 
-        modalTitle.textContent = item.title;
-        modalImage.src = item.photoUrl;
-        modalDescription.textContent = item.description;
+	const showDetails = (item) => {
+		const modalTitle = modal.querySelector("h2");
+		const modalImage = modal.querySelector("img");
+		const modalDescription = modal.querySelector("p");
 
-        modal.style.display = "block";
-    };
+		modalTitle.textContent = item.title;
+		modalImage.src = item.image;
+		modalDescription.innerHTML = `
+			<p>${item.description}</p>
+			<p>Fiyat: ${item.price}</p>
+			<p>Rating: ${item.rating.rate} (${item.rating.count} oy)</p>
+		`;
 
-    closeModal.addEventListener("click", function () {
-        console.log("Close button clicked");
-        modal.style.display = "none";
-    });
+		modal.style.display = "block";
+	};
 
-    window.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            console.log("Outside modal clicked");
-            modal.style.display = "none";
-        }
-    });
+	closeModal.addEventListener("click", function () {
+		modal.style.display = "none";
+	});
 
-    fetch("http://localhost/index.php")
-        .then((res) => {
-            return res.json();
-        })
-        .then((res) => {
-            loadFoods(res);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+	window.addEventListener("click", function (event) {
+		if (event.target === modal) {
+			modal.style.display = "none";
+		}
+	});
+
+	fetch("https://fakestoreapi.com/products")
+		.then((res) => res.json())
+		.then((res) => {
+			loadMarketUrunleri(res);
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 });
