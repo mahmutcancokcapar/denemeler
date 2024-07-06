@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		fetch(apiUrl)
 			.then((res) => res.json())
 			.then((res) => {
-				noteElements.innerHTML = ""; // Clear previous content
+				noteElements.innerHTML = "";
 				if (res.payload.length === 0) {
 					noteElements.innerHTML =
 						"<div id='no-notes'>Henüz not eklenmediğiniz</div>";
