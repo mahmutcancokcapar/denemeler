@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.header-container {
+    background-color: #ff4081;
+    height: 150px;
+    width: 100%;
+}
+
+.new-todo-wrapper {
+    justify-content: center;
+    margin-top: -50px;
+    display: flex;
+    width: 100%;
+}
+
+.new-todo-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 8px;
+    max-width: 400px;
+    display: flex;
+    padding: 20px;
+    width: 90%;
+}
+
+.new-todo-container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.add-todo {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.add-todo input {
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    border-radius: 4px;
+    flex-grow: 1;
+    padding: 8px;
+}
+
+.add-todo button {
+    transition: background-color 0.3s;
+    background-color: #ff4081;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+.add-todo button:hover {
+    background-color: #e91e63;
+}
+
+.notes-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 2px solid #ddd;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 400px;
+    display: flex;
+    padding: 20px;
+    width: 90%;
+}
+
+.notes-component {
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+.notes-component:last-child {
+    border-bottom: none;
+}
+
+.notes-component .not {
+    flex-grow: 1;
+}
+
+.notes-component .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.notes-component button {
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.edit-btn {
+    color: #ff4081;
+}
+
+.delete-btn {
+    color: #e91e63;
+}
+
+@media (max-width: 600px) {
+
+    .new-todo-container,
+    .notes-container {
+        max-width: none;
+        width: 90%;
+    }
+}
